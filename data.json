@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Dog",
+        "discription": "hello world",
+        "picture": "https://hips.hearstapps.com/hmg-prod/images/small-fuffy-dog-breeds-1623362663.jpg?crop=1.00xw:0.753xh;0,0.0719xh&resize=1200:*",
+        "detail":"Dogs are domesticated mammals that belong to the Canidae family. They are known for their loyalty and playful nature, and are often kept as pets. Dogs come in a wide range of breeds, each with its own unique physical and behavioral characteristics."
+    },
+    {
+        "title": "Cat",
+        "discription": "catty cato",
+        "picture": "https://media.npr.org/assets/img/2021/08/11/gettyimages-1279899488_wide-f3860ceb0ef19643c335cb34df3fa1de166e2761-s1100-c50.jpg",
+        "detail":"Cats are small carnivorous mammals known for their grace and agility. They are often kept as pets and come in a variety of breeds with distinctive features."
+    },
+    {
+        "title": "Bear",
+        "discription": "bear bear",
+        "picture": "https://www.shetzers.com/wp-content/uploads/2018/02/Cute-Bear-Cub-Standing-Upright-20170801-150139-880x704.jpg",
+        "detail":"Bears are large mammals found in many parts of the world. They are known for their strength and ferocity, but can also be gentle and intelligent animals."
+    },
+    {
+        "title": "Duck",
+        "discription": "duck duck",
+        "picture": "https://pbs.twimg.com/media/FFiLRTtWQAYMmVU.jpg",
+        "detail":"Ducks are aquatic birds with flat bills and webbed feet. They are commonly found near bodies of water and are known for their distinctive quacking sound. Ducks are often raised for their meat, eggs, or feathers."
+    }
+]
