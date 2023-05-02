@@ -3,6 +3,9 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:layout/pages/detail.dart';
 
+import 'package:http/http.dart' as http;
+import 'dart:async';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -19,19 +22,23 @@ class _HomePageState extends State<HomePage> {
       body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: FutureBuilder(
-            builder: (context, snapshot) {
-              var data = json.decode(snapshot.data.toString());
+            builder: (context, AsyncSnapshot snapshot) {
+              // var data = json.decode(snapshot.data.toString());
               return ListView.builder(
                 itemBuilder: (BuildContext context, int index) {
                   // loop using index , contex use for load json data
-                  return myBox(data[index]['title'], data[index]['discription'],
-                      data[index]['picture'], data[index]['detail']);
+                  return myBox(
+                      snapshot.data[index]['title'],
+                      snapshot.data[index]['discription'],
+                      snapshot.data[index]['picture'],
+                      snapshot.data[index]['detail']);
                 },
-                itemCount: data.length,
+                itemCount: snapshot.data.length,
               );
             },
-            future:
-                DefaultAssetBundle.of(context).loadString('assets/data.json'),
+            future: getData(),
+            // future:
+            //     DefaultAssetBundle.of(context).loadString('assets/data.json'),
           )),
     );
   }
@@ -41,7 +48,7 @@ class _HomePageState extends State<HomePage> {
     return Container(
       margin: const EdgeInsets.only(top: 10),
       padding: const EdgeInsets.all(20),
-      height: 150,
+      height: 200,
       decoration: BoxDecoration(
           image: DecorationImage(
               image: NetworkImage(picture),
@@ -93,5 +100,14 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     );
+  }
+
+  Future getData() async {
+    //https://raw.githubusercontent.com/bonlycpe/flutter_demo/main/data.json
+    var url = Uri.https('raw.githubusercontent.com',
+        '/bonlycpe/flutter_demo/main/data.json');
+    var response = await http.get(url);
+    var result = json.decode(response.body);
+    return result;
   }
 }
